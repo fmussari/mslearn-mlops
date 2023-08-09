@@ -43,3 +43,13 @@ References:
   
 **I'm not sure about the need to create a registered data asset.**  
 **Ran OK**
+
+## Challenge 2: Trigger the Azure Machine Learning job with GitHub Actions
+https://microsoftlearning.github.io/mslearn-mlops/documentation/02-github-actions  
+
+1. Create a service principal:
+   `az ad sp create-for-rbac --name "sp-mlops-labs" --role contributor \
+                              --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \
+                              --sdk-auth`
+3. 
+
