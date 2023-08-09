@@ -4,7 +4,8 @@ Reproducing this tutorial:
 using CLI  
   
 References:  
-[https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-developer-tools.html](https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-developer-tools.html)
+[https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-developer-tools.html](https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-developer-tools.html)  
+[https://microsoftlearning.github.io/mslearn-aml-cli/](https://microsoftlearning.github.io/mslearn-aml-cli/)
 
 ## Steps
 
@@ -22,3 +23,6 @@ References:
 
 4. Create an Azure Machine Learning workspace:  
   `az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"`
+
+5. Create a compute instance in your workspace:
+   `az ml compute create --name "ci1907" --size STANDARD_DS11_V2 --type ComputeInstance -w mlw-mlops-labs -g rg-mlops-labs`
