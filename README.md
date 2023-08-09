@@ -55,3 +55,13 @@ https://microsoftlearning.github.io/mslearn-mlops/documentation/02-github-action
                               --sdk-auth`  
 4. Create a GitHub secret in your repository. Name it `AZURE_CREDENTIALS` and copy and paste the output of the service principal to the Value field of the secret.
 
+Reference: 
+[https://learn.microsoft.com/en-us/training/modules/automate-machine-learning-workflows/4-github-actions](https://learn.microsoft.com/en-us/training/modules/automate-machine-learning-workflows/4-github-actions)
+
+5. Edit the 02-manual-trigger.yml workflow to trigger the Azure Machine Learning job you defined in challenge 1.
+(The service principal is only allowed to submit jobs that use a compute cluster, not a compute instance.)
+
+   a. Create the cluster:
+   `az ml compute create --name "mlops-labs-cluster" --size STANDARD_DS11_V2 --max-instances 2 --type AmlCompute -w mlw-mlops-labs -g rg-mlops-labs`
+   b. Reference the cluster in a copy of `job.yml` named `job-gh-actions.yml` for this porpuse.
+
