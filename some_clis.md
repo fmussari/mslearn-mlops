@@ -13,8 +13,7 @@ References:
 
 1. ```git clone https://github.com/fmussari/mslearn-mlops.git mslearn-mlops
       cd mslearn-mlops
-      code .
-```
+      code .```
   
 2. Remove any ML CLI extensions (both version 1 and 2) to avoid any conflicts with previous versions with this command:  
    `az extension remove -n azure-cli-ml`  
