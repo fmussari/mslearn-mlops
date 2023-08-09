@@ -49,9 +49,9 @@ https://microsoftlearning.github.io/mslearn-mlops/documentation/02-github-action
 
 1. Login:  
    `az login`  
-3. Create a service principal:
+3. Create a service principal:  
    `az ad sp create-for-rbac --name "sp-mlops-labs" --role contributor \  
                               --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \  
                               --sdk-auth`  
-4. 
+4. Create a GitHub secret in your repository. Name it `AZURE_CREDENTIALS` and copy and paste the output of the service principal to the Value field of the secret.
 
