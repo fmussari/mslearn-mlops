@@ -24,5 +24,5 @@ References:
 4. Create an Azure Machine Learning workspace:  
   `az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"`
 
-5. Create a compute instance in your workspace:
+5. Create a compute instance in your workspace:  
    `az ml compute create --name "ci1907" --size STANDARD_DS11_V2 --type ComputeInstance -w mlw-mlops-labs -g rg-mlops-labs`
