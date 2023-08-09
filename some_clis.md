@@ -11,7 +11,10 @@ References:
 
 0. Open the Azure portal and select the [>_] (Cloud Shell) button at the top of the page to the right of the search box.
 
-1. `git clone https://github.com/fmussari/mslearn-mlops.git mslearn-mlops`
+1. ```git clone https://github.com/fmussari/mslearn-mlops.git mslearn-mlops
+      cd mslearn-mlops
+      code .
+```
   
 2. Remove any ML CLI extensions (both version 1 and 2) to avoid any conflicts with previous versions with this command:  
    `az extension remove -n azure-cli-ml`  
@@ -31,5 +34,12 @@ References:
   
 7. Use the CLI (v2) to create a registered data asset:  
   a. Option without .yml [link](https://learn.microsoft.com/en-us/cli/azure/ml/data?view=azure-cli-latest#az-ml-data-create)  
-    `az ml data create --name diabetes-dev-folder --version 1 --path ./experimentation/data -w mlw-mlops-labs`
+    `az ml data create --name diabetes-dev-folder --version 1 --path experimentation/data -w mlw-mlops-labs -g rg-mlops-labs`  
+
   b. Option with .yml [link](https://learn.microsoft.com/en-us/azure/machine-learning/reference-yaml-data?view=azureml-api-2)  
+
+8. Run the job:  
+   `az ml job create --file ./src/job.yml -w mlw-mlops-labs -g rg-mlops-labs`
+  
+**I'm not sure about the need to create a registered data asset.**
+**Ran OK**
