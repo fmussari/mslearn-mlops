@@ -14,4 +14,4 @@ References:
 `az group create --name "rg-mlops-labs" --location "eastus"`
 
 2. Create an Azure Machine Learning workspace:  
-`az ml workspace create --name "mlw-dp100-labs" -g "rg-dp100-labs"`
+`az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"`
