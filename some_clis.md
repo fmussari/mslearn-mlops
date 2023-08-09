@@ -25,4 +25,9 @@ References:
   `az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"`
 
 5. Create a compute instance in your workspace:  
-   `az ml compute create --name "ci1907" --size STANDARD_DS11_V2 --type ComputeInstance -w mlw-mlops-labs -g rg-mlops-labs`
+   `az ml compute create --name "ci71974" --size STANDARD_DS11_V2 --type ComputeInstance -w mlw-mlops-labs -g rg-mlops-labs`  
+  
+6. Use the CLI (v2) to create a registered data asset:
+  a. Option without .yml [link](https://learn.microsoft.com/en-us/cli/azure/ml/data?view=azure-cli-latest#az-ml-data-create)
+    `az ml data create --name diabetes-dev-folder --version 1 --path ./experimentation/data`
+  b. Option with .yml [link](https://learn.microsoft.com/en-us/azure/machine-learning/reference-yaml-data?view=azureml-api-2)
