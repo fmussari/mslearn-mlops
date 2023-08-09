@@ -40,5 +40,5 @@ References:
 8. Run the job:  
    `az ml job create --file ./src/job.yml -w mlw-mlops-labs -g rg-mlops-labs`
   
-**I'm not sure about the need to create a registered data asset.**
+**I'm not sure about the need to create a registered data asset.**  
 **Ran OK**
