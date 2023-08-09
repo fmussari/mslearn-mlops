@@ -50,9 +50,11 @@ https://microsoftlearning.github.io/mslearn-mlops/documentation/02-github-action
 1. Login:  
    `az login`  
 3. Create a service principal:  
-   `az ad sp create-for-rbac --name "sp-mlops-labs" --role contributor \  
-                              --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \  
-                              --sdk-auth`  
+   ```
+   az ad sp create-for-rbac --name "sp-mlops-labs" --role contributor \  
+   --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \  
+   --sdk-auth
+   ```  
 4. Create a GitHub secret in your repository. Name it `AZURE_CREDENTIALS` and copy and paste the output of the service principal to the Value field of the secret.
 
 Reference: 
@@ -61,7 +63,31 @@ Reference:
 5. Edit the 02-manual-trigger.yml workflow to trigger the Azure Machine Learning job you defined in challenge 1.
 (The service principal is only allowed to submit jobs that use a compute cluster, not a compute instance.)
 
-   a. Create the cluster:
-   `az ml compute create --name "mlops-labs-cluster" --size STANDARD_DS11_V2 --max-instances 2 --type AmlCompute -w mlw-mlops-labs -g rg-mlops-labs`
-   b. Reference the cluster in a copy of `job.yml` named `job-gh-actions.yml` for this porpuse.
+   a. Create the cluster:  
+   `az ml compute create --name "mlops-labs-cluster" --size STANDARD_DS11_V2 --max-instances 2 --type AmlCompute -w mlw-mlops-labs -g rg-mlops-labs`  
+   b. Create a copy of `job.yml` named `job-gh-actions.yml` for this porpuse, and reference the compute cluster instead of the instance.
 
+## Delete the ML Workspace to continue tomorrow
+`az ml workspace delete -n mlw-mlops-labs -g rg-mlops-labs`
+
+![](jobs.PNG)
+
+
+## References
+- [Build and operate machine learning solutions with Azure Machine Learning](https://learn.microsoft.com/en-us/training/paths/build-ai-solutions-with-azure-ml-service/)
+- https://microsoftlearning.github.io/mslearn-dp100/
+  
+- [Explore developer tools for workspace interaction](https://learn.microsoft.com/en-us/training/paths/explore-azure-machine-learning-workspace/)
+- https://microsoftlearning.github.io/mslearn-azure-ml/
+  
+- [End-to-end machine learning operations (MLOps) with Azure Machine Learning](https://learn.microsoft.com/en-us/training/paths/build-first-machine-operations-workflow/)
+- https://microsoftlearning.github.io/mslearn-mlops/
+  
+- [Train models in Azure Machine Learning with the CLI (v2)](https://learn.microsoft.com/en-us/training/paths/train-models-azure-machine-learning-cli-v2/)
+- https://microsoftlearning.github.io/mslearn-aml-cli/
+  
+- [Azure MLOps (v2) Solution Accelerator](https://github.com/Azure/mlops-v2)
+  
+- [Machine Learning Operations (MLOps) Challenge](https://learn.microsoft.com/en-us/users/cloudskillschallenge/collections/47mnu0dq1j4z?WT.mc_id=cloudskillschallenge_150df021-d77d-4e78-b51c-76743f48a4c9)
+
+- [Exam DP-100: Designing and Implementing a Data Science Solution on Azure](https://learn.microsoft.com/en-us/certifications/exams/dp-100/)
