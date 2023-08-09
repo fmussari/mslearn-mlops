@@ -16,7 +16,8 @@ from sklearn.model_selection import train_test_split
 def main(args):
     # TO DO: enable autologging
     mlflow.autolog()
-    # IS THIS ENOUGH? NEEDS TO BE IN `train_model`?
+    # DONE: This tracks the metrics
+    
 
     # read data
     df = get_csvs_df(args.training_data)
@@ -65,6 +66,8 @@ def parse_args():
     args = parser.parse_args()
 
     # return args
+    print("args=", args)
+    
     return args
 
 # run script
@@ -72,6 +75,9 @@ if __name__ == "__main__":
     # add space in logs
     print("\n\n")
     print("*" * 60)
+    import platform
+    print("python version:", platform.python_version())
+
 
     # parse args
     args = parse_args()
