@@ -11,9 +11,11 @@ References:
 
 0. Open the Azure portal and select the [>_] (Cloud Shell) button at the top of the page to the right of the search box.
 
-1. ```git clone https://github.com/fmussari/mslearn-mlops.git mslearn-mlops
-      cd mslearn-mlops
-      code . ```
+1. ```
+   git clone https://github.com/fmussari/mslearn-mlops.git mslearn-mlops
+   cd mslearn-mlops
+   code .
+   ```
   
 2. Remove any ML CLI extensions (both version 1 and 2) to avoid any conflicts with previous versions with this command:  
    `az extension remove -n azure-cli-ml`  
