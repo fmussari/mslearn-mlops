@@ -47,9 +47,11 @@ References:
 ## Challenge 2: Trigger the Azure Machine Learning job with GitHub Actions
 https://microsoftlearning.github.io/mslearn-mlops/documentation/02-github-actions  
 
-1. Create a service principal:
-   `az ad sp create-for-rbac --name "sp-mlops-labs" --role contributor \
-                              --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \
-                              --sdk-auth`
-3. 
+1. Login:  
+   `az login`  
+3. Create a service principal:
+   `az ad sp create-for-rbac --name "sp-mlops-labs" --role contributor \  
+                              --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \  
+                              --sdk-auth`  
+4. 
 
