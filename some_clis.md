@@ -1,9 +1,9 @@
 
-Reproducing 
+Reproducing this tutorial:   
 [https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-Azure-Machine-Learning.html](https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-Azure-Machine-Learning.html)
-with CLI
-
-References:
+using CLI  
+  
+References:  
 [https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-developer-tools.html](https://microsoftlearning.github.io/mslearn-azure-ml/Instructions/02-Explore-developer-tools.html)
 
 ## Steps
