@@ -67,11 +67,23 @@ Reference:
    `az ml compute create --name "mlops-labs-cluster" --size STANDARD_DS11_V2 --max-instances 2 --type AmlCompute -w mlw-mlops-labs -g rg-mlops-labs`  
    b. Create a copy of `job.yml` named `job-gh-actions.yml` for this porpuse, and reference the compute cluster instead of the instance.
 
+![](jobs.PNG)
+
 ## Delete the ML Workspace to continue tomorrow
 `az ml workspace delete -n mlw-mlops-labs -g rg-mlops-labs`
 
-![](jobs.PNG)
+### New Day, create resources again
+```
+$ az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"
+$ 
+```
+## Challenge 3: Trigger GitHub Actions with feature-based development
 
+### New Day, create resources again
+```
+$ az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"
+$ 
+```
 
 ## References
 - [Build and operate machine learning solutions with Azure Machine Learning](https://learn.microsoft.com/en-us/training/paths/build-ai-solutions-with-azure-ml-service/)
