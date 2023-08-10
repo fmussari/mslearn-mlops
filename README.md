@@ -92,7 +92,11 @@ $ git commit -m <message>
 $ git push origin HEAD
 ```
   
-The merge was done in github UI   
+The merge was done in github UI.   
+After merging, delete branch:
+```
+$ git branch -d chall3branch
+```
   
 
 ### New Day, create resources again
