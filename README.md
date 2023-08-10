@@ -82,7 +82,8 @@ Reference:
 - [3.2 Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
 ```
-$ git checkout -b chal3branch
+$ git branch -c chall3branch
+$ git checkout chall3branch
 ```
 
 ### New Day, create resources again
