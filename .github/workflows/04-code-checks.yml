@@ -25,6 +25,6 @@ jobs:
         python -m pip pytest==7.1.2
     - name: Run pytest tests
       run: | 
-      pytest tests/
+        pytest tests/
 
 
