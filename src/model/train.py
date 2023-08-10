@@ -18,7 +18,7 @@ def main(args):
     # TO DO: enable autologging
     mlflow.autolog()
     # DONE: This tracks the metrics
-    
+
     # read data
     df = get_csvs_df(args.training_data)
 
@@ -44,7 +44,7 @@ def split_data(df):
         df[[
             'Pregnancies', 'PlasmaGlucose', 'DiastolicBloodPressure',
             'TricepsThickness', 'SerumInsulin', 'BMI', 'DiabetesPedigree',
-            'Age']].values, 
+            'Age']].values,
         df['Diabetic'].values
     )
     print(np.unique(y, return_counts=True))
@@ -74,8 +74,9 @@ def parse_args():
 
     # return args
     print("args=", args)
-    
+
     return args
+
 
 # run script
 if __name__ == "__main__":
@@ -84,7 +85,6 @@ if __name__ == "__main__":
     print("*" * 60)
     import platform
     print("python version:", platform.python_version())
-
 
     # parse args
     args = parse_args()
