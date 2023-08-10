@@ -72,12 +72,18 @@ Reference:
 ## Delete the ML Workspace to continue tomorrow
 `az ml workspace delete -n mlw-mlops-labs -g rg-mlops-labs`
 
-### New Day, create resources again
-```
-$ az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"
-$ 
-```
+
 ## Challenge 3: Trigger GitHub Actions with feature-based development
+
+### Creating a branch
+
+Reference:  
+- Youtube: [GitHub branch rules (protect your git branches)](https://youtu.be/CNCE1gts2Yw)
+- [3.2 Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+```
+$ git checkout -b chal3branch
+```
 
 ### New Day, create resources again
 ```
