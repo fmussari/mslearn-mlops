@@ -98,6 +98,10 @@ After merging, delete branch:
 $ git branch -d chall3branch
 ```
   
+## Challenge 4: Work with linting and unit testing
+
+- Para que funcionara el test en `04-code-checks.yml` hubo que instalare `requirements.txt`
+
 
 ### New Day, create resources again
 ```
