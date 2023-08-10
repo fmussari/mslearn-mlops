@@ -85,6 +85,15 @@ Reference:
 $ git branch -c chall3branch
 $ git checkout chall3branch
 ```
+After doing changes and creating `chall3pr.yml`
+```
+$ git add .
+$ git commit -m <message>
+$ git push origin HEAD
+```
+  
+The merge was done in github UI   
+  
 
 ### New Day, create resources again
 ```
