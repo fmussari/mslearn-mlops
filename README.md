@@ -101,13 +101,61 @@ $ git branch -d chall3branch
 ## Challenge 4: Work with linting and unit testing
 
 - Para que funcionara el test en `04-code-checks.yml` hubo que instalare `requirements.txt`
+- Las protecciones en el branch son para Pull Request, no con push.
 
+## Challenge 5: Work with environments
 
-### New Day, create resources again
+- Delete Service Principal created earlier from Azure. And remove the global repo `AZURE_CREDENTIALS` secret.
+Get the id:
+```
+$ az ad sp list --display-name sp-mlops-labs --query "[].{name:displayName, id:id}" 
+## Another way
+$ az ad sp list --display-name sp-mlops-labs --output table
+
+```
+Delete the previously created Service Principal:
+```
+$ az ad sp delete --id sp-mlops-labs
+```
+
+- Create Service Principals and Credentials for both **development** and **production** environments.
+```
+$ az ad sp create-for-rbac --name "sp-mlops-lab-dev" --role contributor \  
+   --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \  
+   --sdk-auth
+
+$ az ad sp create-for-rbac --name "sp-mlops-lab-prd" --role contributor \  
+   --scopes /subscriptions/<subscription-id>/resourceGroups/rg-mlops-labs \  
+   --sdk-auth
+```
+- For each environment, add the AZURE_CREDENTIALS secret that contains the service principal output.
+
+- Create an Azure Machine Learning workspaces (Should be two, I created one). The resource group is already created:  
 ```
 $ az ml workspace create --name "mlw-mlops-labs" -g "rg-mlops-labs"
-$ 
+```  
+
+- Create a compute instance in your workspace:  
 ```
+$ az ml compute create --name "ci71974" --size STANDARD_DS11_V2 --type ComputeInstance -w mlw-mlops-labs -g rg-mlops-labs
+```  
+  
+- Use the CLI (v2) to create two registered data asset:  
+
+  a. 
+```
+$ az ml data create --name diabetes-dev-folder --version 1 --path experimentation/data -w mlw-mlops-labs -g rg-mlops-labs
+```
+  b. 
+```
+$ az ml data create --name diabetes-prd-folder --version 1 --path production/data -w mlw-mlops-labs -g rg-mlops-labs
+```
+
+
+
+
+
+
 
 ## References
 - [Build and operate machine learning solutions with Azure Machine Learning](https://learn.microsoft.com/en-us/training/paths/build-ai-solutions-with-azure-ml-service/)
