@@ -21,7 +21,6 @@ jobs:
     - name: run pipeline
       run: az ml job create --file ./src/dev-job.yml -w mlw-mlops-labs -g rg-mlops-labs
 
-jobs:
   train-production:
     needs: train-experiment
     runs-on: ubuntu-latest
