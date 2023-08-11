@@ -1,4 +1,4 @@
-name: Manual Trigger Az ML job
+name: Manual Trigger Az ML Dev & Prd Jobs
 
 on:
   workflow_dispatch:
